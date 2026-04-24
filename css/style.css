@@ -1,0 +1,67 @@
+/* Dark Mode Colors */
+:root {
+    --miku-teal: #00cfc1;
+    --bg-black: #0b0c0d;
+    --card-bg: #1f2125;
+}
+
+body {
+    background-color: var(--bg-black);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+/* Navbar Layout */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(0,0,0,0.85);
+}
+
+.logo { color: var(--miku-teal); font-weight: bold; font-size: 1.5rem; }
+
+.nav-links { list-style: none; display: flex; gap: 20px; }
+.nav-links a { color: white; text-decoration: none; }
+
+/* Spotlight Section */
+.hero-section {
+    height: 450px;
+    background: linear-gradient(to right, black, transparent), url('https://via.placeholder.com/1200x500');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+}
+
+.btn-play {
+    background: var(--miku-teal);
+    color: black;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* The Anime Grid */
+.container { padding: 40px 5%; }
+
+.anime-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+}
+
+.anime-card img {
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.anime-card img:hover {
+    border-color: var(--miku-teal);
+    transform: scale(1.05);
+}
