@@ -13,108 +13,122 @@ body {
     overflow-x: hidden;
 }
 
-/* --- Improved Hero Section --- */
+/* Navbar Glass Effect */
+.glass-nav {
+    position: fixed;
+    top: 0; width: 100%; z-index: 1000;
+    background: rgba(11, 12, 13, 0.85);
+    backdrop-filter: blur(12px);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.logo { font-size: 26px; font-weight: 900; color: var(--primary); letter-spacing: -1px; }
+.logo span { color: white; }
+
+.search-pill {
+    background: rgba(255,255,255,0.05);
+    padding: 8px 20px;
+    border-radius: 25px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.search-pill input {
+    background: none; border: none; color: white; outline: none; margin-left: 10px;
+}
+
+/* Hero Section Fixes */
 .hero {
     position: relative;
-    height: 750px; /* Cinematic height */
+    height: 750px;
     width: 100%;
     display: flex;
     align-items: center;
     padding: 0 8%;
-    overflow: hidden;
     background-color: #000;
 }
 
 .hero-bg {
     position: absolute;
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%;
-    
-    /* Image Settings */
+    top: 0; right: 0; width: 100%; height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-    /* This pushes the character to the right so the text is clear */
+    /* Keeps the face on the right side */
     background-position: center right; 
     z-index: 1;
-    transition: transform 0.8s ease;
+    /* Stable HD link */
+    background-image: url('https://images3.alphacoders.com/134/1349544.png');
 }
 
-/* The Secret Sauce: Double Gradient Overlay */
 .hero::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Gradient 1: Darkens the left for text | Gradient 2: Fades the bottom into the site */
-    background: linear-gradient(to right, #0b0c0d 30%, rgba(11, 12, 13, 0.4) 60%, transparent),
-                linear-gradient(to top, #0b0c0d 0%, transparent 25%);
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Deep black fade on left for readability */
+    background: linear-gradient(to right, #0b0c0d 35%, rgba(11, 12, 13, 0.7) 55%, transparent 85%),
+                linear-gradient(to top, #0b0c0d 0%, transparent 20%);
     z-index: 2;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 3; /* Keeps text above the gradients */
-    max-width: 650px;
-    margin-top: 60px;
-}
+.hero-content { position: relative; z-index: 3; max-width: 600px; }
 
-/* --- Hero Typography --- */
 .hero-title {
-    font-size: clamp(3rem, 10vw, 5.5rem);
+    font-size: clamp(3rem, 9vw, 5.5rem);
     font-weight: 900;
     margin: 10px 0;
-    line-height: 1;
+    line-height: 0.9;
     letter-spacing: -2px;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
-.spotlight-tag {
-    color: var(--primary);
-    font-weight: 900;
-    font-size: 14px;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
+.spotlight-tag { color: var(--primary); font-weight: 900; display: flex; align-items: center; gap: 8px; font-size: 14px; }
 
-.meta-row {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-weight: 700;
-    margin-bottom: 25px;
-    color: #eee;
-}
+.meta-row { display: flex; gap: 15px; margin-bottom: 25px; align-items: center; font-weight: bold; }
+.quality { background: white; color: black; padding: 2px 6px; border-radius: 4px; font-size: 11px; }
 
-.quality {
-    background: white;
-    color: black;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 11px;
-}
-
-/* --- Action Buttons --- */
 .btn-main {
     background: var(--primary);
     color: black;
     border: none;
-    padding: 18px 45px;
+    padding: 20px 50px;
     font-weight: 900;
-    font-size: 18px;
     border-radius: 12px;
     cursor: pointer;
+    font-size: 18px;
     transition: 0.3s;
-    box-shadow: 0 0 20px rgba(255, 177, 0, 0.3);
 }
 
-.btn-main:hover {
-    transform: translateY(-3px) scale(1.05);
-    background: #fff;
-    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+.btn-main:hover { transform: scale(1.05); background: white; box-shadow: 0 0 25px rgba(255,255,255,0.2); }
+
+/* Grid Styles */
+.container { padding: 50px 8%; }
+.section-header { display: flex; justify-content: space-between; margin-bottom: 30px; }
+
+.anime-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.poster-wrapper {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.poster-wrapper img { width: 100%; aspect-ratio: 2/3; object-fit: cover; }
+.poster-wrapper:hover { transform: translateY(-12px); }
+
+.ep-tag {
+    position: absolute;
+    bottom: 15px; left: 15px;
+    background: var(--primary);
+    color: black;
+    padding: 4px 10px;
+    font-weight: 900;
+    font-size: 12px;
+    border-radius: 6px;
 }
