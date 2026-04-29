@@ -3,168 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnimeWatch | Professional Stream</title>
+    <title>AnimeWatch | Home</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <style>
-        :root {
-            --primary: #ffb100;
-            --bg: #0b0c0d;
-            --surface: #16181b;
-            --glass: rgba(11, 12, 13, 0.8);
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        body {
-            background-color: var(--bg);
-            color: white;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-        }
-
-        /* --- Glass Navigation --- */
-        header {
-            position: fixed;
-            top: 0; width: 100%; z-index: 1000;
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo { font-size: 24px; font-weight: 900; color: var(--primary); }
-        .logo span { color: white; }
-
-        /* --- The Giant Hero Slider --- */
-        .hero {
-            position: relative;
-            height: 750px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            padding: 0 8%;
-            background-size: cover;
-            background-position: center;
-            /* Your Solo Leveling Link */
-            background-image: linear-gradient(to right, #0b0c0d 30%, transparent), 
-                              url('https://cdn.discordapp.com/attachments/1493012034311295046/1499081907709935716/image.png?ex=69f38052&is=69f22ed2&hm=80d0c382b92b29354f1bdd5cd33090b2dcdbc3731fdff33ddf95f141aa6f79b4&');
-        }
-
-        .hero-content { max-width: 650px; z-index: 2; }
-
-        .hero-title {
-            font-size: clamp(3rem, 10vw, 5.5rem);
-            font-weight: 900;
-            margin: 15px 0;
-            line-height: 1;
-            letter-spacing: -2px;
-        }
-
-        .description {
-            color: #aaa;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .btn-play {
-            background: var(--primary);
-            color: black;
-            border: none;
-            padding: 18px 45px;
-            font-weight: 900;
-            font-size: 18px;
-            border-radius: 12px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-play:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 30px rgba(255, 177, 0, 0.4);
-        }
-
-        /* --- The Anime Grid --- */
-        .container { padding: 50px 8%; }
-        
-        .grid-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-
-        .anime-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: var(--surface);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: 0.3s ease;
-            cursor: pointer;
-        }
-
-        .card:hover { transform: translateY(-10px); }
-
-        .card img {
-            width: 100%;
-            aspect-ratio: 2/3;
-            object-fit: cover;
-            border-bottom: 3px solid transparent;
-        }
-
-        .card:hover img { border-color: var(--primary); }
-
-        .card-info { padding: 12px; }
-        .card-title { font-weight: bold; font-size: 14px; margin-bottom: 5px; }
-    </style>
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <div class="logo">ANIME<span>WATCH</span></div>
-        <div style="color: #666;"><i class="fas fa-search"></i> Search...</div>
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search anime...">
+        </div>
     </header>
 
     <section class="hero">
+        <div class="hero-bg" style="background-image: linear-gradient(to right, #0b0c0d 30%, transparent), url('https://cdn.discordapp.com/attachments/1493012034311295046/1499081907709935716/image.png?ex=69f38052&is=69f22ed2&hm=80d0c382b92b29354f1bdd5cd33090b2dcdbc3731fdff33ddf95f141aa6f79b4&');"></div>
+
         <div class="hero-content">
-            <span style="color: var(--primary); font-weight: bold;">#1 TRENDING</span>
+            <span class="trending-label"><i class="fas fa-fire"></i> #1 Spotlight</span>
             <h1 class="hero-title">Solo Leveling</h1>
-            <p class="description">Ten years after the "Gate" connected the real world with the realm of monsters, the weakest hunter of all mankind, Sung Jinwoo, begins his journey to the top.</p>
-            <a href="#" class="btn-play"><i class="fas fa-play"></i> START WATCHING</a>
+            
+            <div class="hero-meta">
+                <span><i class="fas fa-star"></i> 9.1</span>
+                <span>TV Series</span>
+                <span>24m</span>
+                <span class="quality">4K HD</span>
+            </div>
+
+            <p class="description">Ten years after "the Gate" connected the real world with the realm of monsters, the weakest hunter of all mankind, Sung Jinwoo, begins his journey to become the world's strongest monarch.</p>
+            
+            <div class="hero-btns">
+                <a href="#" class="btn-play"><i class="fas fa-play"></i> START WATCHING</a>
+                <button class="btn-add"><i class="fas fa-plus"></i></button>
+            </div>
+        </div>
+
+        <div class="slider-nav">
+            <div class="nav-arrow left"><i class="fas fa-chevron-left"></i></div>
+            <div class="nav-arrow right"><i class="fas fa-chevron-right"></i></div>
         </div>
     </section>
 
     <div class="container">
         <div class="grid-header">
-            <h2>Recently Updated</h2>
-            <span style="color: var(--primary); cursor: pointer;">View All ></span>
+            <h2>Trending Now</h2>
+            <a href="#" class="view-all">View All <i class="fas fa-chevron-right"></i></a>
         </div>
 
         <div class="anime-grid">
             <div class="card">
-                <img src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx154587-nBy076N9vX6q.jpg">
+                <div class="ep-tag">SUB | DUB</div>
+                <img src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx154587-nBy076N9vX6q.jpg" alt="JJK">
                 <div class="card-info">
                     <div class="card-title">Jujutsu Kaisen</div>
-                    <div style="font-size: 11px; color: #888;">EP 24 | Sub</div>
                 </div>
             </div>
+
             <div class="card">
-                <img src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx21-6ST6re6N94Iq.jpg">
+                <div class="ep-tag">SUB | DUB</div>
+                <img src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx21-6ST6re6N94Iq.jpg" alt="One Piece">
                 <div class="card-info">
                     <div class="card-title">One Piece</div>
-                    <div style="font-size: 11px; color: #888;">EP 1100+ | Sub</div>
                 </div>
             </div>
         </div>
