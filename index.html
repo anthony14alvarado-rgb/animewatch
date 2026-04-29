@@ -1,74 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnimeWatch | Home</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-    <header class="main-header">
+<header class="glass-nav">
+    <div class="nav-container">
         <div class="logo">ANIME<span>WATCH</span></div>
-        <div class="search-bar">
-            <i class="fas fa-search"></i>
-            <input type="text" placeholder="Search anime...">
+        <nav class="desktop-links">
+            <a href="#"><i class="fas fa-home"></i> Home</a>
+            <a href="#"><i class="fas fa-fire"></i> Trending</a>
+            <a href="#"><i class="fas fa-random"></i> Random</a>
+        </nav>
+        <div class="nav-right">
+            <div class="search-pill">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+            <button class="btn-login">Login</button>
         </div>
-    </header>
+    </div>
+</header>
 
-    <section class="hero-slider">
-        <div class="slider-wrapper">
+<section class="hero-slider">
+    <div class="slider-wrapper">
+        
+        <div class="slide active">
+            <div class="slide-img" style="background-image: linear-gradient(to top, #0b0c0d 10%, transparent 50%), linear-gradient(to right, #0b0c0d 30%, transparent), url('https://cdn.discordapp.com/attachments/1493012034311295046/1499081907709935716/image.png?ex=69f38052&is=69f22ed2&hm=80d0c382b92b29354f1bdd5cd33090b2dcdbc3731fdff33ddf95f141aa6f79b4&');"></div>
             
-            <div class="slide active">
-                <div class="slide-img" style="background-image: linear-gradient(to right, #0b0c0d 30%, transparent), url('https://images.alphacoders.com/132/1321456.png');"></div>
-                <div class="slide-content">
-                    <span class="spotlight-tag">#1 Spotlight</span>
-                    <h1 class="anime-title">Solo Leveling</h1>
-                    <div class="meta">
-                        <span><i class="fas fa-play-circle"></i> TV</span>
-                        <span><i class="fas fa-clock"></i> 24m</span>
-                        <span class="quality">HD</span>
-                    </div>
-                    <p class="description">After being left for dead in a double dungeon, Sung Jinwoo awakens with a mysterious leveling system that only he can see.</p>
-                    <div class="slide-btns">
-                        <button class="btn-watch"><i class="fas fa-play"></i> Watch Now</button>
-                        <button class="btn-details">Details <i class="fas fa-chevron-right"></i></button>
-                    </div>
+            <div class="slide-content">
+                <div class="badge-row">
+                    <span class="badge-orange">HOT</span>
+                    <span class="badge-outline">Action</span>
+                    <span class="badge-outline">Fantasy</span>
+                </div>
+                
+                <h1 class="anime-title-giant">Solo Leveling</h1>
+                
+                <div class="info-strip">
+                    <span><i class="fas fa-star"></i> 9.1</span>
+                    <span><i class="fas fa-closed-captioning"></i> 12</span>
+                    <span><i class="fas fa-microphone"></i> 12</span>
+                    <span class="res-tag">4K</span>
+                </div>
+
+                <p class="description-large">Ten years after "the Gate" connected the real world with the realm of monsters, the weakest hunter of all mankind, Sung Jinwoo, finds a path to become a player.</p>
+                
+                <div class="action-bar">
+                    <button class="btn-main-play"><i class="fas fa-play"></i> WATCH NOW</button>
+                    <button class="btn-secondary"><i class="fas fa-bookmark"></i></button>
+                    <button class="btn-secondary"><i class="fas fa-share-alt"></i></button>
                 </div>
             </div>
-
-            <div class="slide">
-                <div class="slide-img" style="background-image: linear-gradient(to right, #0b0c0d 30%, transparent), url('https://images.alphacoders.com/133/1331006.png');"></div>
-                <div class="slide-content">
-                    <span class="spotlight-tag">#2 Spotlight</span>
-                    <h1 class="anime-title">One Piece</h1>
-                    <p class="description">Monkey D. Luffy refuses to let anyone or anything stand in the way of his quest to become the king of all pirates.</p>
-                    <div class="slide-btns">
-                        <button class="btn-watch"><i class="fas fa-play"></i> Watch Now</button>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </section>
+    </div>
 
-    <main class="container">
-        <div class="section-header">
-            <h2>Trending Now</h2>
-            <a href="#" class="view-all">View All ></a>
-        </div>
-        <div class="anime-grid">
-            <div class="anime-card">
-                <div class="poster">
-                    <img src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx154587-nBy076N9vX6q.jpg">
-                    <div class="ep-tag">SUB | EP 24</div>
-                </div>
-                <h3>Jujutsu Kaisen</h3>
-            </div>
-            </div>
-    </main>
-
-</body>
-</html>
+    <div class="stats-bar">
+        <div class="stat-item"><b>1,200+</b> Series</div>
+        <div class="stat-item"><b>800+</b> Movies</div>
+        <div class="stat-item"><b>Live</b> Community</div>
+    </div>
+</section>
